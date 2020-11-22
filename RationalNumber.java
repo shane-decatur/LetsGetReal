@@ -62,7 +62,7 @@ public class RationalNumber extends RealNumber
         b = a;
         a = r;
       }
-      return a;
+      return Math.abs(a);
     }
   }
 
@@ -89,7 +89,14 @@ public class RationalNumber extends RealNumber
   public RationalNumber add(RationalNumber other){
     int nume = numerator * other.getDenominator() + other.getNumerator() * denominator;
     int deno = denominator * other.getDenominator();
-    RationalNumber quotient = new RationalNumber(nume, deno);
-    return quotient;
+    RationalNumber sum = new RationalNumber(nume, deno);
+    return sum;
+  }
+
+  public RationalNumber subtract(RationalNumber other){
+    int nume = numerator * other.getDenominator() - other.getNumerator() * denominator;
+    int deno = denominator * other.getDenominator();
+    RationalNumber difference = new RationalNumber(nume, deno);
+    return difference;
   }
 }
