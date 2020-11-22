@@ -85,4 +85,11 @@ public class RationalNumber extends RealNumber
     RationalNumber quotient = new RationalNumber(nume, deno);
     return quotient;
   }
+
+  public RationalNumber add(RationalNumber other){
+    int nume = numerator * other.getDenominator() + other.getNumerator() * denominator;
+    int deno = denominator * other.getDenominator();
+    RationalNumber quotient = new RationalNumber(nume, deno);
+    return quotient;
+  }
 }
