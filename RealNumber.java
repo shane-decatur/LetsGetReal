@@ -17,7 +17,7 @@ public class RealNumber{
     if (value == 0 || other.getValue() == 0){
       return (value == 0 && other.getValue() == 0);
     }
-    else if (Math.abs(other.getValue() - value) / value <= 0.000001){
+    else if (Math.abs(other.getValue() - value) / value <= 0.00001){
       return true;
     }
     return false;
