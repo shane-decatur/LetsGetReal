@@ -8,7 +8,11 @@ public class RationalNumber extends RealNumber
       numerator = 0;
       denominator = 1;
     }
-    else{
+    else if (deno < 0){
+      numerator = -nume;
+      denominator = -deno;
+    }
+    else {
       numerator = nume;
       denominator = deno;
     }
