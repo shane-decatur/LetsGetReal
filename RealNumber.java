@@ -13,6 +13,15 @@ public class RealNumber{
     return ""+value;
   }
 
-  
+  public boolean equals(RealNumber other){
+    if (value == 0 || other.getValue() == 0){
+      return true;
+    }
+    else if (Math.abs(other.getValue() - value) / value <= 0.000001){
+      return true;
+    }
+    return false;
+  }
 
+  
 }
