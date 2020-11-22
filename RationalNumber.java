@@ -49,24 +49,21 @@ public class RationalNumber extends RealNumber
     }
     int divisor = 1;
     if (a > b){
-      int r = a % b;
-      int dividend = b;
-      while (r != 0){
-        divisor = r;
-        r = dividend % divisor;
-        dividend = divisor;
+      while (a % b != 0){
+        int r = a % b;
+        a = b;
+        b = r;
       }
+      return b;
     }
-    else if (b > a){
-      int r = b % a;
-      int dividend = a;
-      while (r != 0){
-        divisor = r;
-        r = dividend % divisor;
-        dividend = divisor;
+    else {
+      while (b % a != 0){
+        int r = b % a;
+        b = a;
+        a = r;
       }
+      return a;
     }
-    return divisor;
   }
 
   private void reduce(){
@@ -80,5 +77,12 @@ public class RationalNumber extends RealNumber
     int deno = denominator * other.getDenominator();
     RationalNumber product = new RationalNumber(nume, deno);
     return product;
+  }
+
+  public RationalNumber divide(RationalNumber other){
+    int nume = numerator * other.getDenominator();
+    int deno = denominator * other.getNumerator();
+    RationalNumber quotient = new RationalNumber(nume, deno);
+    return quotient;
   }
 }
