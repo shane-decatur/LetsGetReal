@@ -25,4 +25,9 @@ public class RationalNumber extends RealNumber
   public int getDenominator(){
     return denominator;
   }
+
+  public RationalNumber reciprocal(){
+    RationalNumber reciprocal = new RationalNumber(denominator, numerator);
+    return reciprocal;
+  }
 }
