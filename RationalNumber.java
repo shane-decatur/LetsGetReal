@@ -14,5 +14,7 @@ public class RationalNumber extends RealNumber
     }
   }
 
-  
+  public double getValue(){
+    return (double) numerator / denominator;
+  }
 }
